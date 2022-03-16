@@ -35,8 +35,9 @@ func handle(w http.ResponseWriter, r *http.Request) {
 	if o == "" {
 		o = "*"
 	}
-	w.Header().Add("Access-Control-Allow-Origin", o)
-	w.Header().Add("Access-Control-Allow-Methods", "POST")
+	w.Header().Add("access-control-allow-origin", o)
+	w.Header().Add("access-control-allow-methods", "POST")
+	w.Header().Add("access-control-allow-headers", "authorization, content-type")
 
 	if r.Method == "OPTIONS" {
 		return
